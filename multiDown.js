@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { exec } = require('child_process');
 
-// Đọc nội dung file txt
+// Read txt file
 const filePath = path.join(__dirname, '83.txt'); // Replace 'linkHere.txt' with your file name
 fs.readFile(filePath, 'utf8', (err, data) => {
   if (err) {
@@ -18,7 +18,6 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     const outputFileName = `${index + 1}.mp4`;
     const command = `ffmpeg -i "${link}" -codec copy ${outputFileName}`;
     
-    // Trả về một Promise cho việc chạy lệnh ffmpeg
     return new Promise((resolve, reject) => {
       exec(command, (error, stdout, stderr) => {
         if (error) {
