@@ -3,7 +3,7 @@ const path = require('path');
 const { exec } = require('child_process');
 
 // Read txt file
-const filePath = path.join(__dirname, '83.txt'); // Replace 'linkHere.txt' with your file name
+const filePath = path.join(__dirname, 'linkHere.txt'); // Replace 'linkHere.txt' with your file name
 fs.readFile(filePath, 'utf8', (err, data) => {
   if (err) {
     console.error(err);
